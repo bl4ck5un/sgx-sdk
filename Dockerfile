@@ -6,9 +6,12 @@ ARG SGX_SDK_URL=https://download.01.org/intel-sgx/linux-2.1.1/ubuntu64-desktop/s
 ARG SGX_PSW_URL=https://download.01.org/intel-sgx/linux-2.1.1/ubuntu64-desktop/sgx_linux_x64_psw_2.1.101.42337.bin
 
 RUN apt-get update
-RUN apt-get install -y build-essential automake autoconf libtool \
-    cmake libjsoncpp-dev libjsonrpccpp-dev libjsonrpccpp-tools libsqlite3-0 libsqlite3-dev \
-    libboost-all-dev libmicrohttpd-dev libcurl4-openssl-dev odb wget \
+RUN apt-get install -y build-essential automake autoconf \
+    cmake \
+    libprotobuf-dev \
+    libjsoncpp-dev libjsonrpccpp-dev libjsonrpccpp-tools \
+    libsqlite3-0 libsqlite3-dev \
+    libtool libboost-all-dev libmicrohttpd-dev libcurl4-openssl-dev odb wget \
     kmod linux-headers-$(uname -r)
 
 RUN mkdir /root/sgx
