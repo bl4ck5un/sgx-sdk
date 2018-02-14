@@ -11,7 +11,9 @@ RUN apt-get install -y build-essential automake autoconf \
     libprotobuf-dev \
     libjsoncpp-dev libjsonrpccpp-dev libjsonrpccpp-tools \
     libsqlite3-0 libsqlite3-dev \
-    libtool libboost-all-dev libmicrohttpd-dev libcurl4-openssl-dev odb wget \
+    libtool libboost-all-dev libmicrohttpd-dev libcurl4-openssl-dev \
+    liblog4cxx-dev \
+    odb wget \
     kmod linux-headers-$(uname -r)
 
 RUN mkdir /root/sgx
