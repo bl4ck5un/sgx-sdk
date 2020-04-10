@@ -1,7 +1,7 @@
 FROM bl4ck5un/sgx-docker
 MAINTAINER Fan Zhang <bl4ck5unxx@gmail.com>
 
-RUN apt-get update && apt-get install –no-install-recommends -y  -qq \
+RUN apt-get update && apt-get --no-install-recommends install -y -qq \
     build-essential \
     automake \
     autoconf \
