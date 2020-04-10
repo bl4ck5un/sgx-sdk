@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y \
     odb wget curl git
 
 RUN git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc ~/grpc && \
+	cd ~/grpc && \
 	git submodule update --init && \
 	cd ~/grpc/third_party/protobuf && \
 	./autogen.sh && \
@@ -20,3 +21,5 @@ RUN git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
 	cd ~/grpc && make -j $(nproc) PROTOC=/opt/protobuf/bin/protoc && \
 	make prefix=/opt/grpc install && \
 	rm -rf ~/grpc
+
+RUN ldconfig
