@@ -22,4 +22,4 @@ RUN git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc
 	make prefix=/opt/grpc install && \
 	rm -rf ~/grpc
 
-RUN ldconfig
+ENV LD_LIBRARY_PATH="/opt/intel/sgxsdk/sdk_libs:/opt/intel/sgxsdk/sdk_libs:/opt/protobuf/lib:/opt/grpc/lib"
